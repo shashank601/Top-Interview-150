@@ -9,6 +9,7 @@ public:
 
           
             ans = max(sum, ans);
+            
             if (sum < 0) {
                 sum = 0;
             }
@@ -18,3 +19,7 @@ public:
         
     }
 };
+
+=============
+extend old subarray or start a new one (= 0,  then sum += -8)
+
