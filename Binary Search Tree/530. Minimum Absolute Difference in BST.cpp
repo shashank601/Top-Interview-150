@@ -1,6 +1,38 @@
 
 class Solution {
 public:
+    void g(TreeNode* root, TreeNode*& prev, int& ans) {
+
+        if (!root) return;
+
+        g(root->left, prev, ans);
+        
+        if (prev)
+            ans = min(ans, abs(prev->val - root->val));
+
+        prev = root;
+      
+        g(root->right, prev, ans);
+    }
+
+
+    int getMinimumDifference(TreeNode* root) {
+        int ans = INT_MAX;
+        TreeNode* prev = nullptr;
+
+        g(root, prev, ans);
+
+        return ans;
+    }
+};
+
+
+
+
+========
+    
+class Solution {
+public:
     void dfs(TreeNode* root, int& prev, int& ans) {
         if (!root) return;
 
