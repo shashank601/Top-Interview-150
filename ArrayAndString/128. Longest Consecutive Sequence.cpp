@@ -13,6 +13,7 @@ public:
                 int cnt = 1;
 
                 while (st.count(curr + 1)) {
+                    // do not erase i, not needed only skiping is enough
                     ++curr;
                     ++cnt;
                 }
